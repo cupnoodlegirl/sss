@@ -46,3 +46,6 @@ int main() {
 Dependency
 
 https://github.com/catid/gf256
+
+参考
+https://github.com/sellibitze/secretshare-cxx
