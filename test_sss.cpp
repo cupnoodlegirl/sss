@@ -11,12 +11,12 @@ void test() {
   unsigned int th = 3;
   std::cout << "number of shares" << num << std::endl;
   std::cout << "threshold is" << th << std::endl;
-  std::vector<std::vector<share>> shares(
+  std::vector<std::vector<share> > shares(
       num, std::vector<share>(secret.size(), share(1)));
 
   shares = split(secret, num, th);
 
-  std::vector<std::vector<share>> ss(
+  std::vector<std::vector<share> > ss(
       th, std::vector<share>(secret.size(), share(1)));
 
   for (auto i = 0; i < th; i++) {
