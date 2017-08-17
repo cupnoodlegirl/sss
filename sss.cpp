@@ -120,9 +120,9 @@ unsigned char byte_recover(std::vector<share> shares) {
 * ith row represents ith share, jth column represents j byte index at secret
 * each element is a share from 1 byte secret
 */
-std::vector<std::vector<share>> split(std::vector<unsigned char> secret,
+std::vector<std::vector<share> > split(std::vector<unsigned char> secret,
                                       unsigned int num, unsigned int th) {
-  std::vector<std::vector<share>> shares(
+  std::vector<std::vector<share> > shares(
       num, std::vector<share>(secret.size(), share(1)));
 
   for (unsigned int j = 0; j < secret.size(); j++) { // j byte index
@@ -141,7 +141,7 @@ std::vector<std::vector<share>> split(std::vector<unsigned char> secret,
 /**
 * recover returns multi byte secret from k(threshold) shares
 */
-std::vector<unsigned char> recover(std::vector<std::vector<share>> shares) {
+std::vector<unsigned char> recover(std::vector<std::vector<share> > shares) {
 
   std::vector<unsigned char> secret(shares[0].size());
   std::vector<share> byte_shares(shares.size(),
